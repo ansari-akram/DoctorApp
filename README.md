@@ -17,7 +17,7 @@
 ***
  ### Run Doctor App:
   > Windows 
-  - manage.py runserver
+  - python manage.py runserver
   
   > Linux
   - python3 manage.py runserver
