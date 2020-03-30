@@ -120,7 +120,7 @@ def image_upload_view(request):
                     img = img[sli] + "g"
                     # filename = '/home/kernel/Lab_Working_1/media/Patient_reports/' + img
                     import os
-                cwd = '/home/kernel/shazan/11dec2019/Lab_Working_1/media/Patient_reports/'
+                cwd = os.getcwd() + os.sep + 'media' + os.sep + 'Patient_reports' + os.sep
                 filename = cwd + img
                 # 'E:\Lab_Working_1\media\Patient_reports\' + img
                 output = detect_image_label(filename, url)
@@ -132,7 +132,7 @@ def image_upload_view(request):
                 # dec2019 / Lab_Working_1 / Pathology / static / heatmap
 
                 import urllib.request
-                urllib.request.urlretrieve(output[3], "/home/kernel/shazan/11dec2019/Lab_Working_1/Pathology/static/heatmap/heatmap.png")
+                urllib.request.urlretrieve(output[3], os.getcwd() + os.sep +"Pathology" + os.sep + "static" + os.sep + "heatmap" + os.sep + "heatmap.png")
 
                 AI_Usecase_Occurences.objects.create(time=datetime.now(), Image_Output_1=output[1], confidence=conf,
                                                      heatmap="/home/kernel/shazan/11dec2019/Lab_Working_1/Pathology/static/heatmap/heatmap.png")
