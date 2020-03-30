@@ -6,7 +6,6 @@
   
   ***
 
-***
  ### Run Doctor App:
   > Windows 
   - python manage.py runserver
